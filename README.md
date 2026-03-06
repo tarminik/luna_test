@@ -10,6 +10,14 @@ REST API справочник организаций, зданий и видов
 
 ## Быстрый старт
 
+Из готового образа (без сборки):
+
+```bash
+docker compose pull && docker compose up
+```
+
+Локальная сборка:
+
 ```bash
 docker compose up --build
 ```

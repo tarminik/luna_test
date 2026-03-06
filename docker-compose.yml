@@ -11,6 +11,7 @@ services:
       - "5433:5432"
 
   app:
+    image: ghcr.io/tarminik/luna_test:latest
     build: .
     ports:
       - "8000:8000"
