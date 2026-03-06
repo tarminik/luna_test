@@ -10,13 +10,17 @@ REST API справочник организаций, зданий и видов
 
 ## Быстрый старт
 
-Из готового образа (без сборки):
+Требуется: Docker и Docker Compose.
 
 ```bash
-docker compose pull && docker compose up
+git clone https://github.com/tarminik/luna_test.git
+cd luna_test
+docker compose up
 ```
 
-Локальная сборка:
+При первом запуске Docker автоматически скачает готовый образ приложения из GitHub Container Registry и поднимет PostgreSQL. Миграции и тестовые данные применяются автоматически.
+
+Если хотите собрать образ из исходников (вместо скачивания готового):
 
 ```bash
 docker compose up --build
@@ -84,4 +88,9 @@ python -m app.seed
 uvicorn app.main:app --reload
 ```
 
-Настройки берутся из `.env` (см. `.env` для примера) или переменных окружения.
+Настройки (через переменные окружения или файл `.env`):
+
+| Переменная | По умолчанию | Описание |
+|---|---|---|
+| `DATABASE_URL` | `postgresql+asyncpg://postgres:postgres@localhost:5432/luna` | Строка подключения к PostgreSQL |
+| `API_KEY` | `luna-dev-key-12345` | Статический API-ключ для авторизации |
