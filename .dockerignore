@@ -1,0 +1,9 @@
+.git
+.env
+__pycache__
+*.pyc
+*.egg-info
+.claude
+CLAUDE.md
+PLAN.md
+TASK.md
